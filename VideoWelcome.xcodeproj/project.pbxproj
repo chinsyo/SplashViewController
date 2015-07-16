@@ -16,6 +16,7 @@
 		D62DE9E41B56198400CA2EE1 /* VideoWelcomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */; };
 		D62DE9EF1B561B8000CA2EE1 /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62DE9EE1B561B8000CA2EE1 /* VideoView.m */; };
 		D68236BB1B566C67001D5DCD /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D68236BA1B566C67001D5DCD /* welcome_video.mp4 */; };
+		D6FEF6D01B57AECC00588C0F /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FEF6CF1B57AECC00588C0F /* CardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		D62DE9ED1B561B8000CA2EE1 /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
 		D62DE9EE1B561B8000CA2EE1 /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
 		D68236BA1B566C67001D5DCD /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
+		D6FEF6CE1B57AECC00588C0F /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		D6FEF6CF1B57AECC00588C0F /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				D62DE9CC1B56198300CA2EE1 /* AppDelegate.m */,
 				D62DE9CE1B56198300CA2EE1 /* ViewController.h */,
 				D62DE9CF1B56198300CA2EE1 /* ViewController.m */,
+				D6FEF6CE1B57AECC00588C0F /* CardView.h */,
+				D6FEF6CF1B57AECC00588C0F /* CardView.m */,
 				D62DE9ED1B561B8000CA2EE1 /* VideoView.h */,
 				D62DE9EE1B561B8000CA2EE1 /* VideoView.m */,
 				D62DE9D11B56198300CA2EE1 /* Main.storyboard */,
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6FEF6D01B57AECC00588C0F /* CardView.m in Sources */,
 				D62DE9EF1B561B8000CA2EE1 /* VideoView.m in Sources */,
 				D62DE9D01B56198300CA2EE1 /* ViewController.m in Sources */,
 				D62DE9CD1B56198300CA2EE1 /* AppDelegate.m in Sources */,
