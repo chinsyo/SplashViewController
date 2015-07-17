@@ -25,6 +25,7 @@
             field.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6f];
             field.placeholder = i ? @"password" : @"username";
             field.secureTextEntry = i ? YES : NO;
+            field.keyboardAppearance = UIKeyboardAppearanceDark;
             if (!i) {
                 self.username = field;
             } else {

@@ -87,7 +87,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
         }
         [subview.layer addAnimation:anim forKey:@"alpha"];
     }
-    
     CAKeyframeAnimation *keyAnim = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
     keyAnim.duration = TITLE_ANIM_DURATION;
     keyAnim.values = @[@0.0, @1.0, @0.0];
@@ -152,7 +151,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-    
     return button;
 }
 
@@ -197,11 +195,17 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)confirmClick {
+    for (UIView *subview in self.cardView.subviews) {
+        [subview resignFirstResponder];
+    }
     NSLog(@"%@成功 %@ %@",self.status == 1 ? @"登陆":@"注册", self.cardView.username.text, self.cardView.password.text);
     [self transitionToNewStatus:freeStatus];
 }
 
 - (void)cancelClick {
+    for (UIView *subview in self.cardView.subviews) {
+        [subview resignFirstResponder];
+    }
     [self transitionToNewStatus:freeStatus];
 }
 
