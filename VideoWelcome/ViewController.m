@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "VideoView.h"
 #import "CardView.h"
 #import <AVFoundation/AVFoundation.h>
 
@@ -54,7 +53,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 @property (nonatomic) currentStatus status;
 
 @property (nonatomic) AVPlayer *player;
-@property (weak, nonatomic) IBOutlet VideoView *playerView;
+@property (weak, nonatomic) IBOutlet UIView *playerView;
 
 @end
 
@@ -107,9 +106,9 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     
     AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     playerLayer.videoGravity = UIViewContentModeScaleToFill;
+    playerLayer.frame = self.playerView.layer.bounds;
     [self.playerView.layer addSublayer:playerLayer];
 
-    [self.playerView setPlayer:self.player];
     [self.player play];
     
     [self.player.currentItem addObserver:self forKeyPath:AVPlayerItemDidPlayToEndTimeNotification options:NSKeyValueObservingOptionNew context:nil];
