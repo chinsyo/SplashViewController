@@ -1,5 +1,5 @@
 # CHXWelcomeViewController
 
-> 模仿`UBER`实现视频欢迎界面
+> 模仿`Uber`视频欢迎界面
 
 
