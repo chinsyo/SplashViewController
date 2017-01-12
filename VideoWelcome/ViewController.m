@@ -73,6 +73,10 @@ const NSString *rightButtonSignupAction = @"cancelClick";
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil
      ];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)createShowAnim {
@@ -99,8 +103,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
-    [playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    
+
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
     self.player.volume = PLAYER_VOLUME;
     
@@ -111,7 +114,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
     [self.player play];
     
-    [self.player.currentItem addObserver:self forKeyPath:AVPlayerItemDidPlayToEndTimeNotification options:NSKeyValueObservingOptionNew context:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
 }
 
@@ -154,9 +156,6 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 #pragma mark - observer of player
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-
-}
 
 // 视频循环播放
 - (void)moviePlayDidEnd:(NSNotification*)notification{
@@ -182,6 +181,12 @@ const NSString *rightButtonSignupAction = @"cancelClick";
         frame.origin.y += yOffset;
         subview.frame = frame;
     }
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+    
+    if (!self.player) return;
+    [self.player play];
 }
 
 #pragma mark - button click
@@ -265,6 +270,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)dealloc {
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
