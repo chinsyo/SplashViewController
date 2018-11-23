@@ -1,5 +1,5 @@
 //
-//  CardView.h
+//  SplashView.h
 //  SplashViewController
 //
 //  Created by 王晨晓 on 15/7/16.
@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#define kScreenSize [UIScreen mainScreen].bounds.size
-@interface CardView : UIView
+
+@interface SplashView : UIView
+
 @property (nonatomic) UITextField *username;
 @property (nonatomic) UITextField *password;
+
 @end

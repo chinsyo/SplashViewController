@@ -6,19 +6,19 @@
 //  Copyright (c) 2015年 Chinsyo. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "CardView.h"
+#import "SplashViewController.h"
+#import "SplashView.h"
 #import <AVFoundation/AVFoundation.h>
 
-typedef NS_ENUM(NSUInteger, buttonDirection) {
-    buttonLeft = 0,
-    buttonRight,
+typedef NS_ENUM(NSUInteger, SPButtonDirection) {
+    SPButtonDirectionLeft = 0,
+    SPButtonDirectionRight,
 };
 
-typedef NS_ENUM(NSUInteger, currentStatus) {
-    freeStatus = 0,
-    loginStatus,
-    signupStatus,
+typedef NS_ENUM(NSUInteger, SPButtonState) {
+    SPButtonStateIdle = 0,
+    SPButtonStateLogin,
+    SPButtonStateSignup,
 };
 
 static const float PLAYER_VOLUME = 0.0;
@@ -28,46 +28,47 @@ static const float BUTTON_ANIM_DURATION = 3.0f;
 static const float TITLE_ANIM_DURATION = 5.0f;
 static const float TITLE_FONT_SIZE = 72.0f;
 
-const NSString *leftButtonFreeTitle = @"Login";
+const NSString *leftButtonIdleTitle = @"Login";
 const NSString *leftButtonLoginTitle = @"Confirm Login";
 const NSString *leftButtonSignupTitle = @"Confirm Signup";
 
-const NSString *rightButtonFreeTitle = @"Signup";
+const NSString *rightButtonIdleTitle = @"Signup";
 const NSString *rightButtonLoginTitle = @"Cancel Login";
 const NSString *rightButtonSignupTitle = @"Cancel Signup";
 
-const NSString *leftButtonFreeAction = @"loginClick";
+const NSString *leftButtonIdleAction = @"loginClick";
 const NSString *leftButtonLoginAction = @"confirmClick";
 const NSString *leftButtonSignupAction = @"confirmClick";
 
-const NSString *rightButtonFreeAction = @"signupClick";
+const NSString *rightButtonIdleAction = @"signupClick";
 const NSString *rightButtonLoginAction = @"cancelClick";
 const NSString *rightButtonSignupAction = @"cancelClick";
 
-@interface ViewController ()
+@interface SplashViewController ()
+
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UIButton *leftButton;
 @property (nonatomic) UIButton *rightButton;
 
-@property (nonatomic) CardView *cardView;
-@property (nonatomic) currentStatus status;
+@property (nonatomic) SplashView *cardView;
+@property (nonatomic) SPButtonState status;
 
 @property (nonatomic) AVPlayer *player;
 @property (weak, nonatomic) IBOutlet UIView *playerView;
 
 @end
 
-@implementation ViewController
+@implementation SplashViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.status = freeStatus;
+    self.status = SPButtonStateIdle;
     
     [self createVideoPlayer];
     [self createTitleLabel];
     [self createTwoButton];
     [self createShowAnim];
-    [self addCardView];
+    [self addSplashView];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
@@ -118,6 +119,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)createTitleLabel {
+    
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 80, 80)];
     self.titleLabel.alpha = 0.0f;
     self.titleLabel.center = self.view.center;
@@ -130,13 +132,15 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 }
 
 - (void)createTwoButton {
-    self.leftButton = [self createButtonWithTitle:@"Log in" index:buttonLeft action:@selector(loginClick)];
-    self.rightButton = [self createButtonWithTitle:@"Sign up" index:buttonRight action:@selector(signupClick)];
+    
+    self.leftButton = [self createButtonWithTitle:@"Log in" index:SPButtonDirectionLeft action:@selector(loginClick)];
+    self.rightButton = [self createButtonWithTitle:@"Sign up" index:SPButtonDirectionRight action:@selector(signupClick)];
     [self.view addSubview:self.leftButton];
     [self.view addSubview:self.rightButton];
 }
 
-- (UIButton *)createButtonWithTitle:(NSString *)title index:(buttonDirection)index action:(SEL)action {
+- (UIButton *)createButtonWithTitle:(NSString *)title index:(SPButtonDirection)index action:(SEL)action {
+    
     float screenWidth = self.view.frame.size.width;
     float screenHeight = self.view.frame.size.height;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -191,11 +195,11 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 #pragma mark - button click
 - (void)loginClick {
-    [self transitionToNewStatus:loginStatus];
+    [self transitionToNewStatus:SPButtonStateLogin];
 }
 
 - (void)signupClick {
-    [self transitionToNewStatus:signupStatus];
+    [self transitionToNewStatus:SPButtonStateSignup];
 }
 
 - (void)confirmClick {
@@ -203,23 +207,23 @@ const NSString *rightButtonSignupAction = @"cancelClick";
         [subview resignFirstResponder];
     }
     NSLog(@"%@成功 %@ %@",self.status == 1 ? @"登陆":@"注册", self.cardView.username.text, self.cardView.password.text);
-    [self transitionToNewStatus:freeStatus];
+    [self transitionToNewStatus:SPButtonStateIdle];
 }
 
 - (void)cancelClick {
     for (UIView *subview in self.cardView.subviews) {
         [subview resignFirstResponder];
     }
-    [self transitionToNewStatus:freeStatus];
+    [self transitionToNewStatus:SPButtonStateIdle];
 }
 
 // 当前按钮状态发生改变时改变按钮标题和事件
-- (void)transitionToNewStatus:(currentStatus)newStatus {
+- (void)transitionToNewStatus:(SPButtonState)newStatus {
 
-    NSArray *leftButtonTitles = @[leftButtonFreeTitle, leftButtonLoginTitle, leftButtonSignupTitle];
-    NSArray *rightButtonTitles = @[rightButtonFreeTitle, rightButtonLoginTitle, rightButtonSignupTitle];
-    NSArray *leftButtonActions = @[leftButtonFreeAction, leftButtonLoginAction, leftButtonSignupAction];
-    NSArray *rightButtonActions = @[rightButtonFreeAction, rightButtonLoginAction, rightButtonSignupAction];
+    NSArray *leftButtonTitles = @[leftButtonIdleTitle, leftButtonLoginTitle, leftButtonSignupTitle];
+    NSArray *rightButtonTitles = @[rightButtonIdleTitle, rightButtonLoginTitle, rightButtonSignupTitle];
+    NSArray *leftButtonActions = @[leftButtonIdleAction, leftButtonLoginAction, leftButtonSignupAction];
+    NSArray *rightButtonActions = @[rightButtonIdleAction, rightButtonLoginAction, rightButtonSignupAction];
     
     // 移除按钮事件
     [self.leftButton removeTarget:self action:NSSelectorFromString(leftButtonActions[self.status]) forControlEvents:UIControlEventTouchUpInside];
@@ -235,33 +239,33 @@ const NSString *rightButtonSignupAction = @"cancelClick";
     [self.rightButton setTitle:rightButtonTitles[newStatus] forState:UIControlStateNormal];
     
     switch (self.status) {
-        case freeStatus:
-            [self hideCardView];
+        case SPButtonStateIdle:
+            [self hideSplashView];
             break;
             
-        case loginStatus:
-        case signupStatus:
-            [self showCardView];
+        case SPButtonStateLogin:
+        case SPButtonStateSignup:
+            [self showSplashView];
             break;
     }
 }
 
-#pragma mark - CardView Animation
-- (void)addCardView {
+#pragma mark - SplashView Animation
+- (void)addSplashView {
     // TODO: 修改为弹性动画
-    _cardView = [[CardView alloc] init];
+    _cardView = [[SplashView alloc] init];
     _cardView.center = CGPointMake(CGRectGetMidX(self.view.bounds), -CGRectGetMidY(_cardView.bounds));
     [self.view addSubview:_cardView];
 }
 
-- (void)showCardView {
+- (void)showSplashView {
     [UIView animateWithDuration:1.0 animations:^{
         CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y + 500);
         self.cardView.center = center;
     }];
 }
 
-- (void)hideCardView {
+- (void)hideSplashView {
     self.cardView.username.text = self.cardView.password.text = @"";
     [UIView animateWithDuration:0.3 animations:^{
         CGPoint center = CGPointMake(self.cardView.center.x, self.cardView.center.y - 500);
