@@ -1,6 +1,6 @@
 //
 //  CardView.h
-//  VideoWelcome
+//  SplashViewController
 //
 //  Created by 王晨晓 on 15/7/16.
 //  Copyright (c) 2015年 Chinsyo. All rights reserved.

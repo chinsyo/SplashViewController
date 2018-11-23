@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  VideoWelcome
+//  SplashViewController
 //
 //  Created by 王晨晓 on 15/7/15.
 //  Copyright (c) 2015年 Chinsyo. All rights reserved.
@@ -99,7 +99,7 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 - (void)createVideoPlayer {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"welcome_video" ofType:@"mp4"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];

@@ -14,7 +14,7 @@
 		D62DE9D51B56198300CA2EE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62DE9D41B56198300CA2EE1 /* Images.xcassets */; };
 		D62DE9D81B56198300CA2EE1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62DE9D61B56198300CA2EE1 /* LaunchScreen.xib */; };
 		D62DE9E41B56198400CA2EE1 /* VideoWelcomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */; };
-		D68236BB1B566C67001D5DCD /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D68236BA1B566C67001D5DCD /* welcome_video.mp4 */; };
+		D68236BB1B566C67001D5DCD /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D68236BA1B566C67001D5DCD /* video.mp4 */; };
 		D6FEF6D01B57AECC00588C0F /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FEF6CF1B57AECC00588C0F /* CardView.m */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D62DE9C41B56198300CA2EE1 /* VideoWelcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoWelcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62DE9C41B56198300CA2EE1 /* SplashViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplashViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62DE9C81B56198300CA2EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62DE9C91B56198300CA2EE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D62DE9CB1B56198300CA2EE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,10 +39,10 @@
 		D62DE9D21B56198300CA2EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D62DE9D41B56198300CA2EE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D62DE9D71B56198300CA2EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D62DE9DD1B56198400CA2EE1 /* VideoWelcomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoWelcomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62DE9DD1B56198400CA2EE1 /* SplashViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62DE9E21B56198400CA2EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoWelcomeTests.m; sourceTree = "<group>"; };
-		D68236BA1B566C67001D5DCD /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
+		D68236BA1B566C67001D5DCD /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		D6FEF6CE1B57AECC00588C0F /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		D6FEF6CF1B57AECC00588C0F /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,9 +68,9 @@
 		D62DE9BB1B56198300CA2EE1 = {
 			isa = PBXGroup;
 			children = (
-				D68236BA1B566C67001D5DCD /* welcome_video.mp4 */,
-				D62DE9C61B56198300CA2EE1 /* VideoWelcome */,
-				D62DE9E01B56198400CA2EE1 /* VideoWelcomeTests */,
+				D68236BA1B566C67001D5DCD /* video.mp4 */,
+				D62DE9C61B56198300CA2EE1 /* SplashViewController */,
+				D62DE9E01B56198400CA2EE1 /* SplashViewControllerTests */,
 				D62DE9C51B56198300CA2EE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,13 +78,13 @@
 		D62DE9C51B56198300CA2EE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D62DE9C41B56198300CA2EE1 /* VideoWelcome.app */,
-				D62DE9DD1B56198400CA2EE1 /* VideoWelcomeTests.xctest */,
+				D62DE9C41B56198300CA2EE1 /* SplashViewController.app */,
+				D62DE9DD1B56198400CA2EE1 /* SplashViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D62DE9C61B56198300CA2EE1 /* VideoWelcome */ = {
+		D62DE9C61B56198300CA2EE1 /* SplashViewController */ = {
 			isa = PBXGroup;
 			children = (
 				D62DE9CB1B56198300CA2EE1 /* AppDelegate.h */,
@@ -98,7 +98,7 @@
 				D62DE9D61B56198300CA2EE1 /* LaunchScreen.xib */,
 				D62DE9C71B56198300CA2EE1 /* Supporting Files */,
 			);
-			path = VideoWelcome;
+			path = SplashViewController;
 			sourceTree = "<group>";
 		};
 		D62DE9C71B56198300CA2EE1 /* Supporting Files */ = {
@@ -110,13 +110,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D62DE9E01B56198400CA2EE1 /* VideoWelcomeTests */ = {
+		D62DE9E01B56198400CA2EE1 /* SplashViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
 				D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */,
 				D62DE9E11B56198400CA2EE1 /* Supporting Files */,
 			);
-			path = VideoWelcomeTests;
+			path = SplashViewControllerTests;
 			sourceTree = "<group>";
 		};
 		D62DE9E11B56198400CA2EE1 /* Supporting Files */ = {
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D62DE9C31B56198300CA2EE1 /* VideoWelcome */ = {
+		D62DE9C31B56198300CA2EE1 /* SplashViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D62DE9E71B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "VideoWelcome" */;
+			buildConfigurationList = D62DE9E71B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "SplashViewController" */;
 			buildPhases = (
 				D62DE9C01B56198300CA2EE1 /* Sources */,
 				D62DE9C11B56198300CA2EE1 /* Frameworks */,
@@ -142,14 +142,14 @@
 			);
 			dependencies = (
 			);
-			name = VideoWelcome;
+			name = SplashViewController;
 			productName = VideoWelcome;
-			productReference = D62DE9C41B56198300CA2EE1 /* VideoWelcome.app */;
+			productReference = D62DE9C41B56198300CA2EE1 /* SplashViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D62DE9DC1B56198400CA2EE1 /* VideoWelcomeTests */ = {
+		D62DE9DC1B56198400CA2EE1 /* SplashViewControllerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D62DE9EA1B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "VideoWelcomeTests" */;
+			buildConfigurationList = D62DE9EA1B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "SplashViewControllerTests" */;
 			buildPhases = (
 				D62DE9D91B56198400CA2EE1 /* Sources */,
 				D62DE9DA1B56198400CA2EE1 /* Frameworks */,
@@ -160,9 +160,9 @@
 			dependencies = (
 				D62DE9DF1B56198400CA2EE1 /* PBXTargetDependency */,
 			);
-			name = VideoWelcomeTests;
+			name = SplashViewControllerTests;
 			productName = VideoWelcomeTests;
-			productReference = D62DE9DD1B56198400CA2EE1 /* VideoWelcomeTests.xctest */;
+			productReference = D62DE9DD1B56198400CA2EE1 /* SplashViewControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -176,6 +176,7 @@
 				TargetAttributes = {
 					D62DE9C31B56198300CA2EE1 = {
 						CreatedOnToolsVersion = 6.3.1;
+						ProvisioningStyle = Manual;
 					};
 					D62DE9DC1B56198400CA2EE1 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -183,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D62DE9BF1B56198300CA2EE1 /* Build configuration list for PBXProject "VideoWelcome" */;
+			buildConfigurationList = D62DE9BF1B56198300CA2EE1 /* Build configuration list for PBXProject "SplashViewController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -196,8 +197,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D62DE9C31B56198300CA2EE1 /* VideoWelcome */,
-				D62DE9DC1B56198400CA2EE1 /* VideoWelcomeTests */,
+				D62DE9C31B56198300CA2EE1 /* SplashViewController */,
+				D62DE9DC1B56198400CA2EE1 /* SplashViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +210,7 @@
 			files = (
 				D62DE9D31B56198300CA2EE1 /* Main.storyboard in Resources */,
 				D62DE9D81B56198300CA2EE1 /* LaunchScreen.xib in Resources */,
-				D68236BB1B566C67001D5DCD /* welcome_video.mp4 in Resources */,
+				D68236BB1B566C67001D5DCD /* video.mp4 in Resources */,
 				D62DE9D51B56198300CA2EE1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +249,7 @@
 /* Begin PBXTargetDependency section */
 		D62DE9DF1B56198400CA2EE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D62DE9C31B56198300CA2EE1 /* VideoWelcome */;
+			target = D62DE9C31B56198300CA2EE1 /* SplashViewController */;
 			targetProxy = D62DE9DE1B56198400CA2EE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -357,10 +358,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VideoWelcome/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SplashViewController/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -368,10 +372,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = VideoWelcome/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SplashViewController/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -390,7 +397,7 @@
 				INFOPLIST_FILE = VideoWelcomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoWelcome.app/VideoWelcome";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplashViewController.app/SplashViewController";
 			};
 			name = Debug;
 		};
@@ -405,14 +412,14 @@
 				INFOPLIST_FILE = VideoWelcomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoWelcome.app/VideoWelcome";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplashViewController.app/SplashViewController";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D62DE9BF1B56198300CA2EE1 /* Build configuration list for PBXProject "VideoWelcome" */ = {
+		D62DE9BF1B56198300CA2EE1 /* Build configuration list for PBXProject "SplashViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D62DE9E51B56198400CA2EE1 /* Debug */,
@@ -421,7 +428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D62DE9E71B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "VideoWelcome" */ = {
+		D62DE9E71B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "SplashViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D62DE9E81B56198400CA2EE1 /* Debug */,
@@ -430,7 +437,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D62DE9EA1B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "VideoWelcomeTests" */ = {
+		D62DE9EA1B56198400CA2EE1 /* Build configuration list for PBXNativeTarget "SplashViewControllerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D62DE9EB1B56198400CA2EE1 /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:VideoWelcome.xcodeproj">
+      location = "self:/Users/shawn/Desktop/CHXWelcomeViewController/SplashViewController.xcodeproj">
    </FileRef>
 </Workspace>
