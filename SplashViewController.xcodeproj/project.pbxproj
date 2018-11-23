@@ -13,7 +13,6 @@
 		D62DE9D31B56198300CA2EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62DE9D11B56198300CA2EE1 /* Main.storyboard */; };
 		D62DE9D51B56198300CA2EE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62DE9D41B56198300CA2EE1 /* Images.xcassets */; };
 		D62DE9D81B56198300CA2EE1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62DE9D61B56198300CA2EE1 /* LaunchScreen.xib */; };
-		D62DE9E41B56198400CA2EE1 /* VideoWelcomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */; };
 		D68236BB1B566C67001D5DCD /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D68236BA1B566C67001D5DCD /* video.mp4 */; };
 		D6FEF6D01B57AECC00588C0F /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FEF6CF1B57AECC00588C0F /* CardView.m */; };
 /* End PBXBuildFile section */
@@ -40,8 +39,6 @@
 		D62DE9D41B56198300CA2EE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D62DE9D71B56198300CA2EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D62DE9DD1B56198400CA2EE1 /* SplashViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D62DE9E21B56198400CA2EE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoWelcomeTests.m; sourceTree = "<group>"; };
 		D68236BA1B566C67001D5DCD /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		D6FEF6CE1B57AECC00588C0F /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		D6FEF6CF1B57AECC00588C0F /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
@@ -70,7 +67,6 @@
 			children = (
 				D68236BA1B566C67001D5DCD /* video.mp4 */,
 				D62DE9C61B56198300CA2EE1 /* SplashViewController */,
-				D62DE9E01B56198400CA2EE1 /* SplashViewControllerTests */,
 				D62DE9C51B56198300CA2EE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,23 +102,6 @@
 			children = (
 				D62DE9C81B56198300CA2EE1 /* Info.plist */,
 				D62DE9C91B56198300CA2EE1 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D62DE9E01B56198400CA2EE1 /* SplashViewControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				D62DE9E31B56198400CA2EE1 /* VideoWelcomeTests.m */,
-				D62DE9E11B56198400CA2EE1 /* Supporting Files */,
-			);
-			path = SplashViewControllerTests;
-			sourceTree = "<group>";
-		};
-		D62DE9E11B56198400CA2EE1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D62DE9E21B56198400CA2EE1 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,7 +219,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D62DE9E41B56198400CA2EE1 /* VideoWelcomeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
