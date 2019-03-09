@@ -11,13 +11,14 @@
 @implementation SplashView
 
 - (instancetype)init {
-    if (self = [super init]) {
+    self = [super init]
+    if (self) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         CGRect frame = CGRectMake(0, 0, screenSize.width, screenSize.height * 2.0/3);
         self = [[SplashView alloc] initWithFrame:frame];
         self.backgroundColor = [UIColor clearColor];
         self.layer.cornerRadius = 10.0f;
-        self.clipsToBounds = YES;
+        self.layer.maskToBounds = YES;
         
         for (NSUInteger idx = 0; idx < 2; idx++) {
             UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 220, 30)];
@@ -40,8 +41,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    for (UIView *subview in self.subviews) {
-        [subview resignFirstResponder];
-    }
+    [self.subviews makeObjectsPerformSelector:@selector(resignFirstResponder)];
+
 }
 @end
