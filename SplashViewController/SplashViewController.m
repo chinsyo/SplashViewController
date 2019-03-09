@@ -46,15 +46,15 @@ const NSString *rightButtonSignupAction = @"cancelClick";
 
 @interface SplashViewController ()
 
-@property (nonatomic) UILabel *titleLabel;
-@property (nonatomic) UIButton *leftButton;
-@property (nonatomic) UIButton *rightButton;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *leftButton;
+@property (nonatomic, strong) UIButton *rightButton;
 
-@property (nonatomic) SplashView *cardView;
-@property (nonatomic) SPButtonState status;
+@property (nonatomic, strong) SplashView *cardView;
+@property (nonatomic, strong) SPButtonState status;
 
-@property (nonatomic) AVPlayer *player;
-@property (weak, nonatomic) IBOutlet UIView *playerView;
+@property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, weak) IBOutlet UIView *playerView;
 
 @end
 
